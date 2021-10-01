@@ -1,0 +1,2 @@
+class Kaitou < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Kyouka < ApplicationRecord
+end

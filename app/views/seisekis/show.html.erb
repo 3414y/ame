@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @seiseki.user_id %>
+</p>
+
+<p>
+  <strong>Gakunen:</strong>
+  <%= @seiseki.gakunen %>
+</p>
+
+<p>
+  <strong>Gakki:</strong>
+  <%= @seiseki.gakki %>
+</p>
+
+<p>
+  <strong>Kyouka:</strong>
+  <%= @seiseki.kyouka_id %>
+</p>
+
+<p>
+  <strong>Tokuten:</strong>
+  <%= @seiseki.tokuten %>
+</p>
+
+<p>
+  <strong>Narabi:</strong>
+  <%= @seiseki.narabi %>
+</p>
+
+<p>
+  <strong>Hyoutei:</strong>
+  <%= @seiseki.hyoutei %>
+</p>
+
+<%= link_to 'Edit', edit_seiseki_path(@seiseki) %> |
+<%= link_to 'Back', seisekis_path %>

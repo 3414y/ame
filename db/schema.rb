@@ -17,6 +17,15 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+  
+  create_table "kyoukas", force: :cascade do |t|
+    t.integer "gakunen"
+    t.integer "senkou"
+    t.string "namae"
+    t.integer "narabi"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "kigyous", force: :cascade do |t|
     t.string "kigyoumei"
@@ -27,9 +36,40 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+  
+  create_table "seisekis", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gakunen"
+    t.integer "gakki"
+    t.integer "kyouka_id"
+    t.integer "tokuten"
+    t.integer "narabi"
+    t.integer "hyoutei"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "syokusyus", force: :cascade do |t|
     t.string "syokusyumei"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+  
+  create_table "kaitous", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "hentou"
+    t.integer "situmon_id"
+    t.datetime "nitiji"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "akaunto"
+    t.string "pasuwado"
+    t.integer "gakunen"
+    t.integer "kumi"
+    t.string "simei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,6 +80,15 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.string "kennai"
     t.string "shp"
     t.float "hyoutei"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+  
+  create_table "situmons", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "naiyou"
+    t.integer "kategori"
+    t.datetime "nitiji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

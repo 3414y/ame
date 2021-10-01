@@ -1,0 +1,2 @@
+class Situmon < ApplicationRecord
+end
