@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_023523) do
+ActiveRecord::Schema.define(version: 2021_09_29_023809) do
 
   create_table "gakkas", force: :cascade do |t|
     t.string "gakkamei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-  
-  create_table "kyoukas", force: :cascade do |t|
-    t.integer "gakunen"
-    t.integer "senkou"
-    t.string "namae"
-    t.integer "narabi"
+
+  create_table "kaitous", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "hentou"
+    t.integer "situmon_id"
+    t.datetime "nitiji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,7 +36,16 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-  
+
+  create_table "kyoukas", force: :cascade do |t|
+    t.integer "gakunen"
+    t.integer "senkou"
+    t.string "namae"
+    t.integer "narabi"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "seisekis", force: :cascade do |t|
     t.integer "user_id"
     t.integer "gakunen"
@@ -49,27 +58,17 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "syokusyus", force: :cascade do |t|
-    t.string "syokusyumei"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-  
-  create_table "kaitous", force: :cascade do |t|
+  create_table "situmons", force: :cascade do |t|
     t.integer "user_id"
-    t.text "hentou"
-    t.integer "situmon_id"
+    t.text "naiyou"
+    t.integer "kategori"
     t.datetime "nitiji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "akaunto"
-    t.string "pasuwado"
-    t.integer "gakunen"
-    t.integer "kumi"
-    t.string "simei"
+  create_table "syokusyus", force: :cascade do |t|
+    t.string "syokusyumei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -83,12 +82,13 @@ ActiveRecord::Schema.define(version: 2021_09_29_023523) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-  
-  create_table "situmons", force: :cascade do |t|
-    t.integer "user_id"
-    t.text "naiyou"
-    t.integer "kategori"
-    t.datetime "nitiji"
+
+  create_table "users", force: :cascade do |t|
+    t.string "akaunto"
+    t.string "pasuwado"
+    t.integer "gakunen"
+    t.integer "kumi"
+    t.string "simei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
