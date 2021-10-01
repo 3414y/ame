@@ -1,0 +1,2 @@
+class Seiseki < ApplicationRecord
+end

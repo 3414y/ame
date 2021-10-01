@@ -1,0 +1,2 @@
+module SeisekisHelper
+end

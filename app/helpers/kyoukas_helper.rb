@@ -1,0 +1,2 @@
+module KyoukasHelper
+end

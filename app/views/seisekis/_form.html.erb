@@ -1,0 +1,52 @@
+<%= form_with(model: seiseki) do |form| %>
+  <% if seiseki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seiseki.errors.count, "error") %> prohibited this seiseki from being saved:</h2>
+
+      <ul>
+        <% seiseki.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gakunen %>
+    <%= form.number_field :gakunen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gakki %>
+    <%= form.number_field :gakki %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kyouka_id %>
+    <%= form.number_field :kyouka_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tokuten %>
+    <%= form.number_field :tokuten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :narabi %>
+    <%= form.number_field :narabi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hyoutei %>
+    <%= form.number_field :hyoutei %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

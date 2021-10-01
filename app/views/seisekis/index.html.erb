@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Seisekis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Gakunen</th>
+      <th>Gakki</th>
+      <th>Kyouka</th>
+      <th>Tokuten</th>
+      <th>Narabi</th>
+      <th>Hyoutei</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seisekis.each do |seiseki| %>
+      <tr>
+        <td><%= seiseki.user_id %></td>
+        <td><%= seiseki.gakunen %></td>
+        <td><%= seiseki.gakki %></td>
+        <td><%= seiseki.kyouka_id %></td>
+        <td><%= seiseki.tokuten %></td>
+        <td><%= seiseki.narabi %></td>
+        <td><%= seiseki.hyoutei %></td>
+        <td><%= link_to 'Show', seiseki %></td>
+        <td><%= link_to 'Edit', edit_seiseki_path(seiseki) %></td>
+        <td><%= link_to 'Destroy', seiseki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seiseki', new_seiseki_path %>

@@ -1,0 +1,37 @@
+<%= form_with(model: kyouka) do |form| %>
+  <% if kyouka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kyouka.errors.count, "error") %> prohibited this kyouka from being saved:</h2>
+
+      <ul>
+        <% kyouka.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gakunen %>
+    <%= form.number_field :gakunen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senkou %>
+    <%= form.number_field :senkou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :namae %>
+    <%= form.text_field :namae %>
+  </div>
+
+  <div class="field">
+    <%= form.label :narabi %>
+    <%= form.number_field :narabi %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
