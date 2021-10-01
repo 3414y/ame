@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kigyoumei:</strong>
+  <%= @kigyou.kigyoumei %>
+</p>
+
+<p>
+  <strong>Syokusyu:</strong>
+  <%= @kigyou.syokusyu_id %>
+</p>
+
+<p>
+  <strong>Kennnai:</strong>
+  <%= @kigyou.kennnai %>
+</p>
+
+<p>
+  <strong>Khp:</strong>
+  <%= @kigyou.khp %>
+</p>
+
+<p>
+  <strong>Hyoutei:</strong>
+  <%= @kigyou.hyoutei %>
+</p>
+
+<%= link_to 'Edit', edit_kigyou_path(@kigyou) %> |
+<%= link_to 'Back', kigyous_path %>

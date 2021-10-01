@@ -1,0 +1,2 @@
+module GakkasHelper
+end

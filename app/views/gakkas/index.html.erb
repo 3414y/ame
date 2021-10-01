@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gakkas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gakkamei</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gakkas.each do |gakka| %>
+      <tr>
+        <td><%= gakka.gakkamei %></td>
+        <td><%= link_to 'Show', gakka %></td>
+        <td><%= link_to 'Edit', edit_gakka_path(gakka) %></td>
+        <td><%= link_to 'Destroy', gakka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gakka', new_gakka_path %>

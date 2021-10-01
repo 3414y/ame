@@ -1,0 +1,2 @@
+module SyokusyusHelper
+end

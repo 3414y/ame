@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gakkoumei:</strong>
+  <%= @syuusyoku.gakkoumei %>
+</p>
+
+<p>
+  <strong>Gakka:</strong>
+  <%= @syuusyoku.gakka_id %>
+</p>
+
+<p>
+  <strong>Kennai:</strong>
+  <%= @syuusyoku.kennai %>
+</p>
+
+<p>
+  <strong>Shp:</strong>
+  <%= @syuusyoku.shp %>
+</p>
+
+<p>
+  <strong>Hyoutei:</strong>
+  <%= @syuusyoku.hyoutei %>
+</p>
+
+<%= link_to 'Edit', edit_syuusyoku_path(@syuusyoku) %> |
+<%= link_to 'Back', syuusyokus_path %>

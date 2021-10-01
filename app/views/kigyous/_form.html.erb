@@ -1,0 +1,42 @@
+<%= form_with(model: kigyou) do |form| %>
+  <% if kigyou.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kigyou.errors.count, "error") %> prohibited this kigyou from being saved:</h2>
+
+      <ul>
+        <% kigyou.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :kigyoumei %>
+    <%= form.text_field :kigyoumei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :syokusyu_id %>
+    <%= form.text_field :syokusyu_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kennnai %>
+    <%= form.check_box :kennnai %>
+  </div>
+
+  <div class="field">
+    <%= form.label :khp %>
+    <%= form.text_field :khp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hyoutei %>
+    <%= form.text_field :hyoutei %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

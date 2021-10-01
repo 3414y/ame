@@ -1,0 +1,2 @@
+class Gakka < ApplicationRecord
+end

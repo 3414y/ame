@@ -1,0 +1,2 @@
+class Kigyou < ApplicationRecord
+end

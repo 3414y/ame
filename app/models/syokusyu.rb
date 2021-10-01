@@ -1,0 +1,2 @@
+class Syokusyu < ApplicationRecord
+end

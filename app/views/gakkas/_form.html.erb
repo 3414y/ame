@@ -1,0 +1,22 @@
+<%= form_with(model: gakka) do |form| %>
+  <% if gakka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gakka.errors.count, "error") %> prohibited this gakka from being saved:</h2>
+
+      <ul>
+        <% gakka.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gakkamei %>
+    <%= form.text_field :gakkamei %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module KigyousHelper
+end

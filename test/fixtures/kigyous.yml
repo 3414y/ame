@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kigyoumei: MyString
+  syokusyu_id: 
+  kennnai: false
+  khp: MyString
+  hyoutei: 1.5
+
+two:
+  kigyoumei: MyString
+  syokusyu_id: 
+  kennnai: false
+  khp: MyString
+  hyoutei: 1.5

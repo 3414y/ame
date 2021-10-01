@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kigyous</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kigyoumei</th>
+      <th>Syokusyu</th>
+      <th>Kennnai</th>
+      <th>Khp</th>
+      <th>Hyoutei</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kigyous.each do |kigyou| %>
+      <tr>
+        <td><%= kigyou.kigyoumei %></td>
+        <td><%= kigyou.syokusyu_id %></td>
+        <td><%= kigyou.kennnai %></td>
+        <td><%= kigyou.khp %></td>
+        <td><%= kigyou.hyoutei %></td>
+        <td><%= link_to 'Show', kigyou %></td>
+        <td><%= link_to 'Edit', edit_kigyou_path(kigyou) %></td>
+        <td><%= link_to 'Destroy', kigyou, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kigyou', new_kigyou_path %>
