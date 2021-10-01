@@ -1,0 +1,37 @@
+<%= form_with(model: situmon) do |form| %>
+  <% if situmon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(situmon.errors.count, "error") %> prohibited this situmon from being saved:</h2>
+
+      <ul>
+        <% situmon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :naiyou %>
+    <%= form.text_area :naiyou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kategori %>
+    <%= form.number_field :kategori %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nitiji %>
+    <%= form.datetime_select :nitiji %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

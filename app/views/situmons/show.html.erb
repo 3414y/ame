@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @situmon.user_id %>
+</p>
+
+<p>
+  <strong>Naiyou:</strong>
+  <%= @situmon.naiyou %>
+</p>
+
+<p>
+  <strong>Kategori:</strong>
+  <%= @situmon.kategori %>
+</p>
+
+<p>
+  <strong>Nitiji:</strong>
+  <%= @situmon.nitiji %>
+</p>
+
+<%= link_to 'Edit', edit_situmon_path(@situmon) %> |
+<%= link_to 'Back', situmons_path %>

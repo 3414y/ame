@@ -1,0 +1,37 @@
+<%= form_with(model: kaitou) do |form| %>
+  <% if kaitou.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kaitou.errors.count, "error") %> prohibited this kaitou from being saved:</h2>
+
+      <ul>
+        <% kaitou.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hentou %>
+    <%= form.text_area :hentou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situmon_id %>
+    <%= form.number_field :situmon_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nitiji %>
+    <%= form.datetime_select :nitiji %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

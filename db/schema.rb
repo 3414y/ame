@@ -33,12 +33,31 @@ ActiveRecord::Schema.define(version: 2021_09_29_023809) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
+  create_table "kaitous", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "hentou"
+    t.integer "situmon_id"
+    t.datetime "nitiji"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "akaunto"
     t.string "pasuwado"
     t.integer "gakunen"
     t.integer "kumi"
     t.string "simei"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "situmons", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "naiyou"
+    t.integer "kategori"
+    t.datetime "nitiji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
