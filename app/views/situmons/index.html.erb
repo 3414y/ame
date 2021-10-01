@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Situmons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Naiyou</th>
+      <th>Kategori</th>
+      <th>Nitiji</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @situmons.each do |situmon| %>
+      <tr>
+        <td><%= situmon.user_id %></td>
+        <td><%= situmon.naiyou %></td>
+        <td><%= situmon.kategori %></td>
+        <td><%= situmon.nitiji %></td>
+        <td><%= link_to 'Show', situmon %></td>
+        <td><%= link_to 'Edit', edit_situmon_path(situmon) %></td>
+        <td><%= link_to 'Destroy', situmon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Situmon', new_situmon_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @kaitou.user_id %>
+</p>
+
+<p>
+  <strong>Hentou:</strong>
+  <%= @kaitou.hentou %>
+</p>
+
+<p>
+  <strong>Situmon:</strong>
+  <%= @kaitou.situmon_id %>
+</p>
+
+<p>
+  <strong>Nitiji:</strong>
+  <%= @kaitou.nitiji %>
+</p>
+
+<%= link_to 'Edit', edit_kaitou_path(@kaitou) %> |
+<%= link_to 'Back', kaitous_path %>
