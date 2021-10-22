@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tensus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seiseki</th>
+      <th>Kyouka</th>
+      <th>Tokuten</th>
+      <th>Hyoutei</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tensus.each do |tensu| %>
+      <tr>
+        <td><%= tensu.seiseki_id %></td>
+        <td><%= tensu.kyouka_id %></td>
+        <td><%= tensu.tokuten %></td>
+        <td><%= tensu.hyoutei %></td>
+        <td><%= link_to 'Show', tensu %></td>
+        <td><%= link_to 'Edit', edit_tensu_path(tensu) %></td>
+        <td><%= link_to 'Destroy', tensu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tensu', new_tensu_path %>

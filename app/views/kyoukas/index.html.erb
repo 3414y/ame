@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Kyoukas</h1>
+<h1>教科</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Gakunen</th>
-      <th>Senkou</th>
-      <th>Namae</th>
-      <th>Narabi</th>
+      <th>学年</th>
+      <th>専攻</th>
+      <th>教科名</th>
+      <th>並び</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= kyouka.senkou %></td>
         <td><%= kyouka.namae %></td>
         <td><%= kyouka.narabi %></td>
-        <td><%= link_to 'Show', kyouka %></td>
-        <td><%= link_to 'Edit', edit_kyouka_path(kyouka) %></td>
-        <td><%= link_to 'Destroy', kyouka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', kyouka %></td>
+        <td><%= link_to '編集', edit_kyouka_path(kyouka) %></td>
+        <td><%= link_to '削除', kyouka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Kyouka', new_kyouka_path %>
+<%= link_to '教科追加', new_kyouka_path %>

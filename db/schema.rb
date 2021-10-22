@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_023809) do
+ActiveRecord::Schema.define(version: 2021_10_19_014027) do
 
   create_table "gakkas", force: :cascade do |t|
     t.string "gakkamei"
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 2021_09_29_023809) do
     t.string "kennai"
     t.string "shp"
     t.float "hyoutei"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tensus", force: :cascade do |t|
+    t.integer "seiseki_id"
+    t.integer "kyouka_id"
+    t.integer "tokuten"
+    t.integer "hyoutei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

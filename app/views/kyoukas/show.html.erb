@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Gakunen:</strong>
+  <strong>学年:</strong>
   <%= @kyouka.gakunen %>
 </p>
 
 <p>
-  <strong>Senkou:</strong>
+  <strong>専攻:</strong>
   <%= @kyouka.senkou %>
 </p>
 
 <p>
-  <strong>Namae:</strong>
+  <strong>教科名:</strong>
   <%= @kyouka.namae %>
 </p>
 
 <p>
-  <strong>Narabi:</strong>
+  <strong>並び:</strong>
   <%= @kyouka.narabi %>
 </p>
 
-<%= link_to 'Edit', edit_kyouka_path(@kyouka) %> |
-<%= link_to 'Back', kyoukas_path %>
+<%= link_to '編集', edit_kyouka_path(@kyouka) %> |
+<%= link_to '戻る', kyoukas_path %>

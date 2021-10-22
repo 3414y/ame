@@ -1,0 +1,37 @@
+<%= form_with(model: tensu) do |form| %>
+  <% if tensu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tensu.errors.count, "error") %> prohibited this tensu from being saved:</h2>
+
+      <ul>
+        <% tensu.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :seiseki_id %>
+    <%= form.number_field :seiseki_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kyouka_id %>
+    <%= form.number_field :kyouka_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tokuten %>
+    <%= form.number_field :tokuten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hyoutei %>
+    <%= form.number_field :hyoutei %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

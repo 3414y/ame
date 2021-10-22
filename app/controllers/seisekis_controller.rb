@@ -4,6 +4,7 @@ class SeisekisController < ApplicationController
   # GET /seisekis or /seisekis.json
   def index
     @seisekis = Seiseki.all
+    @users = User.all
   end
 
   # GET /seisekis/1 or /seisekis/1.json
@@ -17,6 +18,14 @@ class SeisekisController < ApplicationController
 
   # GET /seisekis/1/edit
   def edit
+  end
+  
+  def search
+    @users = User.where("gakunen = ? and kumi = ?", params[:gakunen], params[:kumi])
+    @gakunen = params[:gakunen]
+    @kumi = params[:kumi]
+    @seisekis = Seiseki.all
+    render "index"
   end
 
   # POST /seisekis or /seisekis.json
@@ -64,6 +73,6 @@ class SeisekisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seiseki_params
-      params.require(:seiseki).permit(:user_id, :gakunen, :gakki, :kyouka_id, :tokuten, :narabi, :hyoutei)
+      params.require(:seiseki).permit(:user_id, :gakunen, :gakki, tensus_attributes:[:id,:tokuten, :hyoutei])
     end
 end

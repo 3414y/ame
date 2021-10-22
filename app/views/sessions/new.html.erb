@@ -1,0 +1,27 @@
+<h1>Log in</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:danger] %>
+  <p><%= flash[:danger] %></p>
+<% end %>
+
+<div>
+    <div>
+        <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.label "アカウント" %>
+          <%= f.text_field :akaunto %>
+
+          <%= f.label "パスワード" %>
+          <%= f.password_field :password %>
+
+          <%= f.submit "Log in" %>
+        <% end %>
+
+        <P>New user? <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+</div>
+

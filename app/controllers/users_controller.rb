@@ -25,6 +25,21 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        senkou = 0
+        case @user.kumi
+        when 1,2,3
+          senkou = 1
+        when 4
+          senkou = 2
+        end
+        (1..3).each do |gakunen|
+          (1..3).each do |gakki|
+            seiseki = Seiseki.create(user_id: @user.id,gakunen:gakunen,gakki:gakki)
+            Kyouka.where(gakunen:gakunen,senkou:senkou).each do |kyouka|
+              Tensu.create(seiseki_id: seiseki.id,kyouka_id: kyouka.id,tokuten: 0)
+            end
+          end
+        end
         format.html { redirect_to @user, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
