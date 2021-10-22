@@ -3,7 +3,7 @@ class SitumonsController < ApplicationController
 
   # GET /situmons or /situmons.json
   def index
-    @situmons = Situmon.all
+    @situmon = Situmon.new
   end
 
   # GET /situmons/1 or /situmons/1.json
@@ -11,13 +11,31 @@ class SitumonsController < ApplicationController
   end
 
   # GET /situmons/new
-  def new
-    @situmon = Situmon.new
+  def new 
+    @situmon = Situmon.new 
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
   end
 
   # GET /situmons/1/edit
   def edit
+    @situmon = Situmon.new
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
   end
+
+  def search
+    @situmons_singaku_gakkou = Situmon.where(kategori:2).where(kategori2:4).order(nitiji: :desc)
+  end  
+  def search2
+    @situmons_singaku_benkyou = Situmon.where(kategori:2).where(kategori2:3).order(nitiji: :desc)
+  end
+  def search3
+    @situmons_syuusyoku_benkyou = Situmon.where(kategori:1).where(kategori2:3).order(nitiji: :desc)
+  end
+  def search4
+    @situmons_syuusyoku_kigyou = Situmon.where(kategori:1).where(kategori2:4).order(nitiji: :desc)
+  end  
 
   # POST /situmons or /situmons.json
   def create
@@ -56,6 +74,8 @@ class SitumonsController < ApplicationController
     end
   end
 
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_situmon
@@ -64,6 +84,10 @@ class SitumonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def situmon_params
-      params.require(:situmon).permit(:user_id, :naiyou, :kategori, :nitiji)
+      params.require(:situmon).permit(:user_id, :naiyou, :kategori, :kategori2, :nitiji)
     end
+
+    
+
+
 end

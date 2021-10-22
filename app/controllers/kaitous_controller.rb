@@ -21,29 +21,14 @@ class KaitousController < ApplicationController
 
   # POST /kaitous or /kaitous.json
   def create
-    @kaitou = Kaitou.new(kaitou_params)
+    @kaitou = Kaitou.new
+    @kaitou.hentou = params[:kaitou][:hentou]
+    @kaitou.situmon_id = params[:kaitou][:situmon_id]
 
-    respond_to do |format|
-      if @kaitou.save
-        format.html { redirect_to @kaitou, notice: "Kaitou was successfully created." }
-        format.json { render :show, status: :created, location: @kaitou }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @kaitou.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /kaitous/1 or /kaitous/1.json
-  def update
-    respond_to do |format|
-      if @kaitou.update(kaitou_params)
-        format.html { redirect_to @kaitou, notice: "Kaitou was successfully updated." }
-        format.json { render :show, status: :ok, location: @kaitou }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @kaitou.errors, status: :unprocessable_entity }
-      end
+    if @kaitou.save
+      redirect_to situmon_path(@kaitou.situmon_id)
+    else
+      render :new  
     end
   end
 

@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_014027) do
     t.datetime "nitiji"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "kategori2"
   end
 
   create_table "syokusyus", force: :cascade do |t|

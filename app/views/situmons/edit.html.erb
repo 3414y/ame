@@ -4,3 +4,8 @@
 
 <%= link_to 'Show', @situmon %> |
 <%= link_to 'Back', situmons_path %>
+
+<h1>質問一覧</h1>
+<%= render 'list1', situmon: @situmon_singaku %>
+
+<%= render 'list2', situmon: @situmon_syuusyoku %>
