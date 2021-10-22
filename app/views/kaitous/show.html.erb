@@ -12,6 +12,9 @@
 
 <p>
   <strong>Situmon:</strong>
+  <% if situmon_id = situmon_id %>
+      naiyou
+  <% end %>
   <%= @kaitou.situmon_id %>
 </p>
 
@@ -19,6 +22,31 @@
   <strong>Nitiji:</strong>
   <%= @kaitou.nitiji %>
 </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Hentou</th>
+      <th>Situmon</th>
+      <th>Nitiji</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kaitous.each do |kaitou| %>
+      <tr>
+        <td><%= kaitou.user_id %></td>
+        <td><%= kaitou.hentou %></td>
+        <td><%= kaitou.situmon_id %></td>
+        <td><%= kaitou.nitiji %></td>
+        <td><%= link_to 'Show', kaitou %></td>
+        <td><%= link_to 'Destroy', kaitou, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_kaitou_path(@kaitou) %> |
 <%= link_to 'Back', kaitous_path %>

@@ -1,32 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Situmons</h1>
+<h1>質問</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Naiyou</th>
-      <th>Kategori</th>
-      <th>Nitiji</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br>
 
-  <tbody>
-    <% @situmons.each do |situmon| %>
-      <tr>
-        <td><%= situmon.user_id %></td>
-        <td><%= situmon.naiyou %></td>
-        <td><%= situmon.kategori %></td>
-        <td><%= situmon.nitiji %></td>
-        <td><%= link_to 'Show', situmon %></td>
-        <td><%= link_to 'Edit', edit_situmon_path(situmon) %></td>
-        <td><%= link_to 'Destroy', situmon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<body>
+  <p>カテゴリ
+    <form action="1"method="post">
+      <input type="radio" name="進学" value="就職">就職
+      <input type="radio" name="1" value="進学">進学
+  <br>
+      <input type="radio" name="勉強方法" value="勉強方法">勉強方法
+      <input type="radio" name="2" value="企業・学校"> 企業・学校
+  </p>
+</body>
+
+
+
+
 
 <br>
 

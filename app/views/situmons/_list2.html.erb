@@ -1,0 +1,33 @@
+<table>
+    <tr>
+      <td><h2>就職</h2></td>
+      <td><h4><%= link_to '企業', situmon_search4_path %></h4></td>
+    </tr>
+    <tr>
+      <td><br></br></td>
+      <td><h4><%= link_to '勉強方法', situmon_search3_path %><h4></td>
+    </tr>   
+   
+</table> 
+<table>
+    <tr>
+      <th>User</th>
+      <th>Naiyou</th>
+      <th>Kategori</th>
+      <th>Nitiji</th>
+      <th colspan="3"></th>
+    </tr>
+  <tbody>
+    <% situmon.each do |s| %>
+      <tr> 
+        <td><%= s.user_id %></td>
+        <td><%= s.naiyou %></td>
+        <td><%= s.kategori %></td>
+        <td><%= s.nitiji %></td>
+        <td><%= link_to '詳細', s %></td>
+        <td><%= link_to '削除', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+    

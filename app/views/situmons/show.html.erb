@@ -5,20 +5,54 @@
   <%= @situmon.user_id %>
 </p>
 
-<p>
+<p> 
   <strong>Naiyou:</strong>
   <%= @situmon.naiyou %>
 </p>
 
+
 <p>
   <strong>Kategori:</strong>
-  <%= @situmon.kategori %>
+  <% if @situmon.kategori == 1 %>
+    就職
+  <% else %>
+    進学
+  <% end %>
+  
+</p>
+
+
+<p>
+  <strong>Kategori2:</strong>
+  <% if @situmon.kategori2 == 3 %>
+    勉強方法
+  <% else %>
+    企業・学校
+  <% end %>
 </p>
 
 <p>
   <strong>Nitiji:</strong>
   <%= @situmon.nitiji %>
 </p>
+
+<p><b>返答</p></b>
+<%= form_tag('/kaitous') do %>
+  <%= hidden_field :kaitou, :situmon_id, :value => @situmon.id %>
+  <p>
+  <%= text_field :kaitou, :hentou %>
+  <%= submit_tag "返答追加" %>
+  </p>
+<% end %>  
+
+<% @situmon.kaitous.each do |h| %>
+  <p>
+  <%= h.created_at %>
+  <br>
+  <%= h.hentou %>
+  </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_situmon_path(@situmon) %> |
 <%= link_to 'Back', situmons_path %>

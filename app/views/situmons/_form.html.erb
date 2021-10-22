@@ -9,25 +9,31 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザ%>
     <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :naiyou %>
+    <%= form.label :カテゴリ %>
+    <%= form.radio_button :kategori, "1" %>就職
+  　<%= form.radio_button :kategori, "2" %>進学
+  </div>
+
+  <div class="field">
+  <%= form.label :カテゴリ2 %>
+  <%= form.radio_button :kategori2, "3" %>勉強方法
+　<%= form.radio_button :kategori2, "4" %>企業・学校
+
+  <div class="field">
+    <%= form.label :内容 %>
     <%= form.text_area :naiyou %>
   </div>
 
   <div class="field">
-    <%= form.label :kategori %>
-    <%= form.number_field :kategori %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nitiji %>
+    <%= form.label :日付 %>
     <%= form.datetime_select :nitiji %>
   </div>
 
@@ -35,3 +41,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
