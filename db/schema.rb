@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_014027) do
+ActiveRecord::Schema.define(version: 2021_10_26_024803) do
 
   create_table "gakkas", force: :cascade do |t|
     t.string "gakkamei"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_014027) do
     t.string "simei"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
   end
 
 end
