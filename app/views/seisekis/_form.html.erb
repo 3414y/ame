@@ -12,37 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザー %>
     <%= form.number_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :gakunen %>
+    <%= form.label :学年 %>
     <%= form.number_field :gakunen %>
   </div>
 
   <div class="field">
-    <%= form.label :gakki %>
+    <%= form.label :学期 %>
     <%= form.number_field :gakki %>
   </div>
 
-  <div class="field">
-    <%= form.label :kyouka_id %>
-    <%= form.number_field :kyouka_id %>
-  </div>
+  <%= form.fields_for(:tensus) do |tensu| %>
+    <div class="field">
+     <%= tensu.label tensu.object.kyouka.namae %>
+     <%= tensu.number_field :tokuten %>
+     <%= tensu.number_field :hyoutei %>
+    </div>
+    <%= tensu.hidden_field :id %>
+  <% end %>
 
   <div class="field">
-    <%= form.label :tokuten %>
-    <%= form.number_field :tokuten %>
-  </div>
-
-  <div class="field">
-    <%= form.label :narabi %>
+    <%= form.label :並び %>
     <%= form.number_field :narabi %>
   </div>
 
   <div class="field">
-    <%= form.label :hyoutei %>
+    <%= form.label :評定 %>
     <%= form.number_field :hyoutei %>
   </div>
 

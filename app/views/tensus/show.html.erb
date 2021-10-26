@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seiseki:</strong>
+  <%= @tensu.seiseki_id %>
+</p>
+
+<p>
+  <strong>Kyouka:</strong>
+  <%= @tensu.kyouka_id %>
+</p>
+
+<p>
+  <strong>Tokuten:</strong>
+  <%= @tensu.tokuten %>
+</p>
+
+<p>
+  <strong>Hyoutei:</strong>
+  <%= @tensu.hyoutei %>
+</p>
+
+<%= link_to 'Edit', edit_tensu_path(@tensu) %> |
+<%= link_to 'Back', tensus_path %>

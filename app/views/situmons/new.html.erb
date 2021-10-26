@@ -1,5 +1,10 @@
-<h1>New Situmon</h1>
+<h1>質問</h1>
 
 <%= render 'form', situmon: @situmon %>
 
 <%= link_to 'Back', situmons_path %>
+
+<h1>質問一覧</h1>
+<%= render 'list1', situmon: @situmon_singaku %>
+
+<%= render 'list2', situmon: @situmon_syuusyoku %>

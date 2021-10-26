@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Akaunto:</strong>
+  <strong>アカウント:</strong>
   <%= @user.akaunto %>
 </p>
 
 <p>
-  <strong>Pasuwado:</strong>
+  <strong>パスワード:</strong>
   <%= @user.pasuwado %>
 </p>
 
 <p>
-  <strong>Gakunen:</strong>
+  <strong>学年:</strong>
   <%= @user.gakunen %>
 </p>
 
 <p>
-  <strong>Kumi:</strong>
+  <strong>組:</strong>
   <%= @user.kumi %>
 </p>
 
 <p>
-  <strong>Simei:</strong>
+  <strong>氏名:</strong>
   <%= @user.simei %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>

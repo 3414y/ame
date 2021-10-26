@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザー:</strong>
   <%= @seiseki.user_id %>
 </p>
 
 <p>
-  <strong>Gakunen:</strong>
+  <strong>学年:</strong>
   <%= @seiseki.gakunen %>
 </p>
 
 <p>
-  <strong>Gakki:</strong>
+  <strong>学期:</strong>
   <%= @seiseki.gakki %>
 </p>
 
 <p>
-  <strong>Kyouka:</strong>
+  <strong>教科:</strong>
   <%= @seiseki.kyouka_id %>
 </p>
 
 <p>
-  <strong>Tokuten:</strong>
+  <strong>得点:</strong>
   <%= @seiseki.tokuten %>
 </p>
 
 <p>
-  <strong>Narabi:</strong>
+  <strong>並び:</strong>
   <%= @seiseki.narabi %>
 </p>
 
 <p>
-  <strong>Hyoutei:</strong>
+  <strong>評定:</strong>
   <%= @seiseki.hyoutei %>
 </p>
 
-<%= link_to 'Edit', edit_seiseki_path(@seiseki) %> |
-<%= link_to 'Back', seisekis_path %>
+<%= link_to '編集', edit_seiseki_path(@seiseki) %> |
+<%= link_to '戻る', seisekis_path %>
