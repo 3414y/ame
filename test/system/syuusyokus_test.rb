@@ -17,7 +17,7 @@ class SyuusyokusTest < ApplicationSystemTestCase
     fill_in "Gakka", with: @syuusyoku.gakka_id
     fill_in "Gakkoumei", with: @syuusyoku.gakkoumei
     fill_in "Hyoutei", with: @syuusyoku.hyoutei
-    fill_in "Kennai", with: @syuusyoku.kennai
+    check "Kennai", if @syuusyoku.kennai
     fill_in "Shp", with: @syuusyoku.shp
     click_on "Create Syuusyoku"
 
@@ -32,7 +32,7 @@ class SyuusyokusTest < ApplicationSystemTestCase
     fill_in "Gakka", with: @syuusyoku.gakka_id
     fill_in "Gakkoumei", with: @syuusyoku.gakkoumei
     fill_in "Hyoutei", with: @syuusyoku.hyoutei
-    fill_in "Kennai", with: @syuusyoku.kennai
+    check "Kennai", if @syuusyoku.kennai
     fill_in "Shp", with: @syuusyoku.shp
     click_on "Update Syuusyoku"
 

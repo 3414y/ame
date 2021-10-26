@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :gakkoumei %>
+    <%= form.label :'学校名' %>
     <%= form.text_field :gakkoumei %>
   </div>
 
   <div class="field">
-    <%= form.label :gakka_id %>
-    <%= form.text_field :gakka_id %>
+    <%= form.label :'学科名' %>
+    <%= form.select :gakka_id, Gakka.all.map { |b| [b.gakkamei, b.id] } %>
   </div>
 
   <div class="field">
-    <%= form.label :kennai %>
-    <%= form.text_field :kennai %>
+    <%= form.label :'県内' %>
+    <%= form.check_box :kennai %>
   </div>
 
   <div class="field">
-    <%= form.label :shp %>
+    <%= form.label :'学校HP' %>
     <%= form.text_field :shp %>
   </div>
 
   <div class="field">
-    <%= form.label :hyoutei %>
+    <%= form.label :'評定' %>
     <%= form.text_field :hyoutei %>
   </div>
 

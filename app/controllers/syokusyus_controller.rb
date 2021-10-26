@@ -25,7 +25,7 @@ class SyokusyusController < ApplicationController
 
     respond_to do |format|
       if @syokusyu.save
-        format.html { redirect_to @syokusyu, notice: "Syokusyu was successfully created." }
+        format.html { redirect_to @syokusyu, notice: "職種を追加しました。" }
         format.json { render :show, status: :created, location: @syokusyu }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SyokusyusController < ApplicationController
   def update
     respond_to do |format|
       if @syokusyu.update(syokusyu_params)
-        format.html { redirect_to @syokusyu, notice: "Syokusyu was successfully updated." }
+        format.html { redirect_to @syokusyu, notice: "職種情報を更新しました。" }
         format.json { render :show, status: :ok, location: @syokusyu }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class SyokusyusController < ApplicationController
   def destroy
     @syokusyu.destroy
     respond_to do |format|
-      format.html { redirect_to syokusyus_url, notice: "Syokusyu was successfully destroyed." }
+      format.html { redirect_to syokusyus_url, notice: "削除しました。" }
       format.json { head :no_content }
     end
   end

@@ -25,7 +25,7 @@ class GakkasController < ApplicationController
 
     respond_to do |format|
       if @gakka.save
-        format.html { redirect_to @gakka, notice: "Gakka was successfully created." }
+        format.html { redirect_to @gakka, notice: "学科を追加しました。" }
         format.json { render :show, status: :created, location: @gakka }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GakkasController < ApplicationController
   def update
     respond_to do |format|
       if @gakka.update(gakka_params)
-        format.html { redirect_to @gakka, notice: "Gakka was successfully updated." }
+        format.html { redirect_to @gakka, notice: "学科情報を更新しました。" }
         format.json { render :show, status: :ok, location: @gakka }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class GakkasController < ApplicationController
   def destroy
     @gakka.destroy
     respond_to do |format|
-      format.html { redirect_to gakkas_url, notice: "Gakka was successfully destroyed." }
+      format.html { redirect_to gakkas_url, notice: "削除しました。" }
       format.json { head :no_content }
     end
   end

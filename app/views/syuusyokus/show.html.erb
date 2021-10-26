@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<h1>進学先詳細</h1>
+
 <p>
-  <strong>Gakkoumei:</strong>
+  <strong>学校名:</strong>
   <%= @syuusyoku.gakkoumei %>
 </p>
 
 <p>
-  <strong>Gakka:</strong>
-  <%= @syuusyoku.gakka_id %>
+  <strong>学科名:</strong>
+  <%= @syuusyoku.gakka.gakkamei %>
 </p>
 
 <p>
-  <strong>Kennai:</strong>
+  <strong>県内:</strong>
   <%= @syuusyoku.kennai %>
 </p>
 
 <p>
-  <strong>Shp:</strong>
-  <%= @syuusyoku.shp %>
+  <strong>学校HP:</strong>
+  <%= link_to @syuusyoku.shp,target:"_blank" do %> 
+    <i class="@syuusyoku.shp"></i><%= @syuusyoku.shp %></a>
+    <% end %>
 </p>
 
 <p>
-  <strong>Hyoutei:</strong>
+  <strong>評定:</strong>
   <%= @syuusyoku.hyoutei %>
 </p>
 
-<%= link_to 'Edit', edit_syuusyoku_path(@syuusyoku) %> |
-<%= link_to 'Back', syuusyokus_path %>
+<%= link_to '進学先情報更新', edit_syuusyoku_path(@syuusyoku) %> |
+<%= link_to '進学先一覧', syuusyokus_path %>

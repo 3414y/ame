@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<h1>企業詳細</h1>
+
 <p>
-  <strong>Kigyoumei:</strong>
+  <strong>企業名:</strong>
   <%= @kigyou.kigyoumei %>
 </p>
 
 <p>
-  <strong>Syokusyu:</strong>
-  <%= @kigyou.syokusyu_id %>
+  <strong>職種名:</strong>
+  <%= @kigyou.syokusyu.syokusyumei %>
 </p>
 
 <p>
-  <strong>Kennnai:</strong>
+  <strong>県内:</strong>
   <%= @kigyou.kennnai %>
 </p>
 
 <p>
-  <strong>Khp:</strong>
-  <%= @kigyou.khp %>
+  <strong>企業HP:</strong>
+  <%= link_to @kigyou.khp,target:"_blank" do %> 
+    <i class="@kigyou.khp"></i><%= @kigyou.khp %></a>
+    <% end %>
 </p>
 
 <p>
-  <strong>Hyoutei:</strong>
+  <strong>評定:</strong>
   <%= @kigyou.hyoutei %>
 </p>
 
-<%= link_to 'Edit', edit_kigyou_path(@kigyou) %> |
-<%= link_to 'Back', kigyous_path %>
+<%= link_to '企業情報更新', edit_kigyou_path(@kigyou) %> 
+<%= link_to '企業一覧', kigyous_path %>

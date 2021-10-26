@@ -25,7 +25,7 @@ class KigyousController < ApplicationController
 
     respond_to do |format|
       if @kigyou.save
-        format.html { redirect_to @kigyou, notice: "Kigyou was successfully created." }
+        format.html { redirect_to @kigyou, notice: "企業を追加しました。" }
         format.json { render :show, status: :created, location: @kigyou }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class KigyousController < ApplicationController
   def update
     respond_to do |format|
       if @kigyou.update(kigyou_params)
-        format.html { redirect_to @kigyou, notice: "Kigyou was successfully updated." }
+        format.html { redirect_to @kigyou, notice: "企業情報を更新しました。" }
         format.json { render :show, status: :ok, location: @kigyou }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class KigyousController < ApplicationController
   def destroy
     @kigyou.destroy
     respond_to do |format|
-      format.html { redirect_to kigyous_url, notice: "Kigyou was successfully destroyed." }
+      format.html { redirect_to kigyous_url, notice: "削除しました。" }
       format.json { head :no_content }
     end
   end
