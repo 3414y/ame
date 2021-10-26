@@ -3,7 +3,7 @@ class CreateSyuusyokus < ActiveRecord::Migration[6.1]
     create_table :syuusyokus do |t|
       t.string :gakkoumei
       t.integer :gakka_id
-      t.string :kennai
+      t.boolean :kennai
       t.string :shp
       t.float :hyoutei
 

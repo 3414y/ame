@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_10_26_024803) do
 
   create_table "kigyous", force: :cascade do |t|
     t.string "kigyoumei"
-    t.integer "syokusyu_id"
+    t.string "syokusyu_id"
     t.boolean "kennnai"
     t.string "khp"
     t.float "hyoutei"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2021_10_26_024803) do
 
   create_table "syuusyokus", force: :cascade do |t|
     t.string "gakkoumei"
-    t.integer "gakka_id"
-    t.string "kennai"
+    t.string "gakka_id"
+    t.boolean "kennai"
     t.string "shp"
     t.float "hyoutei"
     t.datetime "created_at", precision: 6, null: false

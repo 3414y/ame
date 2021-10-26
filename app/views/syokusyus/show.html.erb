@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>職種詳細</h1>
+
 <p>
-  <strong>Syokusyumei:</strong>
+  <strong>職種名:</strong>
   <%= @syokusyu.syokusyumei %>
 </p>
 
-<%= link_to 'Edit', edit_syokusyu_path(@syokusyu) %> |
-<%= link_to 'Back', syokusyus_path %>
+<%= link_to '職種情報更新', edit_syokusyu_path(@syokusyu) %> |
+<%= link_to '職種一覧', syokusyus_path %>

@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gakkas</h1>
+<h1>学科一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Gakkamei</th>
+      <th>学科名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @gakkas.each do |gakka| %>
       <tr>
         <td><%= gakka.gakkamei %></td>
-        <td><%= link_to 'Show', gakka %></td>
-        <td><%= link_to 'Edit', edit_gakka_path(gakka) %></td>
-        <td><%= link_to 'Destroy', gakka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', gakka %></td>
+        <td><%= link_to '更新', edit_gakka_path(gakka) %></td>
+        <td><%= link_to '削除', gakka, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Gakka', new_gakka_path %>
+<%= link_to '学科追加', new_gakka_path %>

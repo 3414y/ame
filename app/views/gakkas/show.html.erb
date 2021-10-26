@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>学科詳細</h1>
+
 <p>
-  <strong>Gakkamei:</strong>
+  <strong>学科名:</strong>
   <%= @gakka.gakkamei %>
 </p>
 
-<%= link_to 'Edit', edit_gakka_path(@gakka) %> |
-<%= link_to 'Back', gakkas_path %>
+<%= link_to '学科情報更新', edit_gakka_path(@gakka) %> 
+<%= link_to '学科一覧', gakkas_path %>

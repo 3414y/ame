@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :kigyoumei %>
+    <%= form.label :'企業名' %>
     <%= form.text_field :kigyoumei %>
   </div>
 
   <div class="field">
-    <%= form.label :syokusyu_id %>
-    <%= form.text_field :syokusyu_id %>
+    <%= form.label :'職種名' %>
+    <%= form.select :syokusyu_id, Syokusyu.all.map { |b| [b.syokusyumei, b.id] } %>
   </div>
 
   <div class="field">
-    <%= form.label :kennnai %>
+    <%= form.label :'県内' %>
     <%= form.check_box :kennnai %>
   </div>
 
   <div class="field">
-    <%= form.label :khp %>
+    <%= form.label :'企業HP' %>
     <%= form.text_field :khp %>
   </div>
 
   <div class="field">
-    <%= form.label :hyoutei %>
+    <%= form.label :'評定' %>
     <%= form.text_field :hyoutei %>
   </div>
 
