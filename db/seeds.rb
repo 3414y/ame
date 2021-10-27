@@ -32,3 +32,11 @@ CSV.foreach("db/syokusyus.csv",headers: true) do |row|
     )
 end
 
+# Gakkas
+Gakka.delete_all
+reset_pk_sequence("gakkas")
+CSV.foreach("db/gakkas.csv",headers: true) do |row|
+    Gakka.create(
+        gakkamei: row["gakkamei"]
+    )
+end
