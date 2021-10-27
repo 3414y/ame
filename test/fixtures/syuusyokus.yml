@@ -3,13 +3,13 @@
 one:
   gakkoumei: MyString
   gakka_id: 
-  kennai: MyString
+  kennai: false
   shp: MyString
   hyoutei: 1.5
 
 two:
   gakkoumei: MyString
   gakka_id: 
-  kennai: MyString
+  kennai: false
   shp: MyString
   hyoutei: 1.5

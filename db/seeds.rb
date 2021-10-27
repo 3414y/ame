@@ -80,3 +80,11 @@ end
 User.create!(simei: "先生",akaunto: "0",pasuwado: "000",kumi: "0",admin: true)
 
 
+# Gakkas
+Gakka.delete_all
+reset_pk_sequence("gakkas")
+CSV.foreach("db/gakkas.csv",headers: true) do |row|
+    Gakka.create(
+        gakkamei: row["gakkamei"]
+    )
+end
