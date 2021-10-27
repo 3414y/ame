@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   get 'situmon_search2', to: 'situmons#search2'
   get 'situmon_search3', to: 'situmons#search3'
   get 'situmon_search4', to: 'situmons#search4'
+
+  #get 'home/top', to: 'kigyous'
+  #get 'home/top', to: 'seisekis'
+  #get 'home/top', to: 'situmon'
 end
 
 
