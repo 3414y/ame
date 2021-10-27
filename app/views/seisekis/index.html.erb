@@ -42,16 +42,16 @@
 
         <% gakki_seiseki_id = Seiseki.search_seiseki_id(user,2) %>
         <% if gakki_seiseki_id.nil? %>
-        <td>データがありません</tb>
+        <td>データがありません</td>
         <% else %>
-        <td><%= link_to '2学期', edit_seiseki_path(gakki_seiseki_id) %></tb>
+        <td><%= link_to '2学期', edit_seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
         <% gakki_seiseki_id = Seiseki.search_seiseki_id(user,3) %>
         <% if gakki_seiseki_id.nil? %>
-        <td>データがありません</tb>
+        <td>データがありません</td>
         <% else %>
-        <t><%= link_to '3学期', edit_seiseki_path(gakki_seiseki_id) %></tb>
+        <td><%= link_to '3学期', edit_seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
         <td><%= link_to '編集', edit_user_path(user) %></td>

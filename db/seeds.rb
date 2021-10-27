@@ -32,3 +32,51 @@ CSV.foreach("db/syokusyus.csv",headers: true) do |row|
     )
 end
 
+Kyouka.delete_all
+reset_pk_sequence("kyoukas")
+CSV.foreach("db/kyoukas.csv",headers: true) do |row|
+    @kyouka=Kyouka.create(
+        namae: row["namae"],
+        gakunen: row["gakunen"],
+        senkou: row["senkou"],
+        narabi: row["narabi"]
+    )
+end
+
+Seiseki.delete_all
+reset_pk_sequence("seisekis")
+
+Tensu.delete_all
+reset_pk_sequence("tensus")
+
+User.delete_all
+reset_pk_sequence("users")
+CSV.foreach("db/users.csv",headers: true) do |row|
+    @user=User.create(
+        akaunto: row["akaunto"],
+        pasuwado: row["pasuwado"],
+        gakunen: row["gakunen"],
+        kumi: row["kumi"],
+        simei: row["simei"]
+    )
+
+    senkou = 0
+    case @user.kumi
+    when 1,2,3
+      senkou = 1
+    when 4
+      senkou = 2
+    end
+    (1..3).each do |gakunen|
+      (1..3).each do |gakki|
+        seiseki = Seiseki.create(user_id: @user.id,gakunen:gakunen,gakki:gakki)
+        Kyouka.where(gakunen:gakunen,senkou:senkou).each do |kyouka|
+          Tensu.create(seiseki_id: seiseki.id,kyouka_id: kyouka.id,tokuten: 0)
+        end
+      end
+    end
+end
+
+User.create!(simei: "先生",akaunto: "0",pasuwado: "000",kumi: "0",admin: true)
+
+
