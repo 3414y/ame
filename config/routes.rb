@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :users
   resources :kaitous
   resources :situmons
+  resources:senntakus
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'situmon_search', to: 'situmons#search'
   get 'situmon_search2', to: 'situmons#search2'
