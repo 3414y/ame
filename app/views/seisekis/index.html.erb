@@ -26,6 +26,10 @@
 
   <tbody>
     <% @users.each do |user| %>
+      <% if  teacher? || yourself(user) %>
+      <% else %>
+      <% next %>
+      <% end %>
       <tr>
         <td><%= user.akaunto %></td>
         <td><%= user.pasuwado %></td>
@@ -54,8 +58,13 @@
         <td><%= link_to '3学期', edit_seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
+        <% if teacher? %>
         <td><%= link_to '編集', edit_user_path(user) %></td>
         <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <td></td>
+        <td></td>
+        <% end %>
         
       </tr>
     <% end %>
