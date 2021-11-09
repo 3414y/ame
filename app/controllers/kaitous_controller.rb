@@ -28,7 +28,7 @@ class KaitousController < ApplicationController
     if @kaitou.save
       redirect_to situmon_path(@kaitou.situmon_id)
     else
-      render :new  
+      redirect_to situmon_path(@kaitou.situmon_id), alert: "返答を入力してください" 
     end
   end
 

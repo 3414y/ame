@@ -11,10 +11,10 @@
 </table> 
 <table>
     <tr>
-      <th>User</th>
-      <th>Naiyou</th>
-      <th>Kategori</th>
-      <th>Nitiji</th>
+      <th>ユーザ</th>
+      <th>内容</th>
+      <th>進学・就職</th>
+      <th>日時</th>
       <th colspan="3"></th>
     </tr>
   <tbody>
@@ -22,7 +22,7 @@
       <tr> 
         <td><%= s.user_id %></td>
         <td><%= s.naiyou %></td>
-        <td><% if @situmon.kategori == 1 %></td>
+        <td><% if s.kategori == 1 %></td>
            就職
         <% else %>
            進学
