@@ -9,6 +9,10 @@ class SeisekisController < ApplicationController
 
   # GET /seisekis/1 or /seisekis/1.json
   def show
+    user_id = @seiseki.user_id  
+    @seisekis_1 = Seiseki.where("user_id = ? and gakunen = ?",user_id,1).order(:gakunen,:gakki)
+    @seisekis_2 = Seiseki.where("user_id = ? and gakunen = ?",user_id,2).order(:gakunen,:gakki)
+    @seisekis_3 = Seiseki.where("user_id = ? and gakunen = ?",user_id,3).order(:gakunen,:gakki)
   end
 
   # GET /seisekis/new
