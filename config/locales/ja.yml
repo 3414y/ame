@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      situmon:
+        naiyou: 内容
+      

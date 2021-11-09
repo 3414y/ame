@@ -40,7 +40,8 @@ class SitumonsController < ApplicationController
   # POST /situmons or /situmons.json
   def create
     @situmon = Situmon.new(situmon_params)
-
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
     respond_to do |format|
       if @situmon.save
         format.html { redirect_to @situmon, notice: "Situmon was successfully created." }
@@ -51,9 +52,12 @@ class SitumonsController < ApplicationController
       end
     end
   end
-
+ 
+      
   # PATCH/PUT /situmons/1 or /situmons/1.json
   def update
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
     respond_to do |format|
       if @situmon.update(situmon_params)
         format.html { redirect_to @situmon, notice: "Situmon was successfully updated." }

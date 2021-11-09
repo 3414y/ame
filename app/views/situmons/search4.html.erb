@@ -1,10 +1,10 @@
 <table>
     <tr>
-      <th>User</th>
-      <th>Naiyou</th>
-      <th>Kategori</th>
-      <th>Kategori2</th>
-      <th>Nitiji</th>
+      <th>ユーザ</th>
+      <th>内容</th>
+      <th>進学・就職</th>
+      <th>企業・勉強方法</th>
+      <th>日時</th>
       <th colspan="3"></th>
     </tr>
     <tbody>
@@ -13,8 +13,16 @@
             <tr> 
               <td><%= s.user_id %></td> 
               <td><%= s.naiyou %></td>
-              <td><%= s.kategori %></td>
-                <td><%= s.kategori2 %></td>
+            <td><% if s.kategori == 1 %></td>
+              <td>就職</td>
+            <% else %>
+              進学
+            <% end %>
+            <% if s.kategori2 == 3 %>
+             <td>勉強方法</td>
+            <% else %>
+             <td>企業・学校</td>
+            <% end %>
                 <td><%= s.nitiji %></td>
                 <td><%= link_to '詳細', s %></td>
                 <td><%= link_to '削除', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
