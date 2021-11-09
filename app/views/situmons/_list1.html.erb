@@ -29,7 +29,12 @@
         <% end %>
         <td><%= s.nitiji %></td>
         <td><%= link_to '詳細', s %></td>
-        <td><%= link_to '削除', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if teacher? %>
+          <td><%= link_to '削除', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
