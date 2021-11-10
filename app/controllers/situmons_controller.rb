@@ -73,7 +73,7 @@ class SitumonsController < ApplicationController
   def destroy
     @situmon.destroy
     respond_to do |format|
-      format.html { redirect_to situmons_url, notice: "Situmon was successfully destroyed." }
+      format.html { redirect_to new_situmon_url, notice: "Situmon was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -36,7 +36,7 @@ class KaitousController < ApplicationController
   def destroy
     @kaitou.destroy
     respond_to do |format|
-      format.html { redirect_to kaitous_url, notice: "Kaitou was successfully destroyed." }
+      format.html { redirect_to new_situmon_url, notice: "Kaitou was successfully destroyed." }
       format.json { head :no_content }
     end
   end
