@@ -1,7 +1,7 @@
 <h1> AME </h1>
 <h4 class='keisen'> <%= link_to 'アイコン',edit_user_path(current_user.id) %></h4>
 <tbody>
- <h2 class="keisen"> <a href = 'http://localhost:3000/seisekis/4'> 成績一覧</a></h2> 
+ <h2 class="keisen"><%= link_to ' 成績一覧  ', teacher? ? seisekis_path : seiseki_path(@seiseki.id) %></h2>
     <tr>
       <td> <h3 class="keisen2"> <a href = 'http://localhost:3000/senntakus/top/'> 就職/進学一覧</a></h3> </td>
     <td> <h2 class="keisen3">  <%= link_to '  質問', new_situmon_path %> </h2>  </td>
