@@ -11,22 +11,31 @@
 </table> 
 <table>
     <tr>
-      <th>User</th>
-      <th>Naiyou</th>
-      <th>Kategori</th>
-      <th>Nitiji</th>
+      <th>ユーザ</th>
+      <th>内容</th>
+      <th>進学・就職</th>
+      <th>日時</th>
       <th colspan="3"></th>
     </tr>
   <tbody>
     <% situmon.each do |s| %>
-      <tr> 
-        <td><%= s.user_id %></td>
-        <td><%= s.naiyou %></td>
-        <td><%= s.kategori %></td>
-        <td><%= s.nitiji %></td>
-        <td><%= link_to '詳細', s %></td>
+    <tr> 
+    <td><%= s.user_id %></td>
+    <td><%= s.naiyou %></td>
+      <% if s.kategori == 1 %>
+        <td>就職</td>
+      <% else %>
+        進学
+      <% end %>
+    <td><%= s.nitiji %></td>
+    <td><%= link_to '詳細', s %></td>
+      <% if teacher? %>
         <td><%= link_to '削除', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% else %>
+        <td></td>
+        <td></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table> 

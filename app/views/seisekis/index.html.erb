@@ -41,21 +41,21 @@
         <% if gakki_seiseki_id.nil? %>
         <td>データがありません</td>
         <% else %>
-        <td><%= link_to '1学期', edit_seiseki_path(gakki_seiseki_id) %></td>
+        <td><%= link_to '1学期', teacher? ? edit_seiseki_path(gakki_seiseki_id) : seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
         <% gakki_seiseki_id = Seiseki.search_seiseki_id(user,2) %>
         <% if gakki_seiseki_id.nil? %>
         <td>データがありません</td>
         <% else %>
-        <td><%= link_to '2学期', edit_seiseki_path(gakki_seiseki_id) %></td>
+        <td><%= link_to '2学期', teacher? ? edit_seiseki_path(gakki_seiseki_id) : seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
         <% gakki_seiseki_id = Seiseki.search_seiseki_id(user,3) %>
         <% if gakki_seiseki_id.nil? %>
         <td>データがありません</td>
         <% else %>
-        <td><%= link_to '3学期', edit_seiseki_path(gakki_seiseki_id) %></td>
+        <td><%= link_to '3学期', teacher? ? edit_seiseki_path(gakki_seiseki_id) : seiseki_path(gakki_seiseki_id) %></td>
         <% end %>
 
         <% if teacher? %>
@@ -73,5 +73,3 @@
 <p id="notice"><%= notice %></p>
 
 <br>
-
-<%= link_to '成績登録', new_seiseki_path %>

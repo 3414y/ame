@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :ユーザー %>
-    <%= form.number_field :user_id %>
+    <%= form.label seiseki.user.simei %>
   </div>
 
   <div class="field">
     <%= form.label :学年 %>
-    <%= form.number_field :gakunen %>
+    <%= form.label seiseki.user.gakunen %>
   </div>
 
   <div class="field">
     <%= form.label :学期 %>
-    <%= form.number_field :gakki %>
+    <%= form.label seiseki.gakki %>
   </div>
 
   <%= form.fields_for(:tensus) do |tensu| %>

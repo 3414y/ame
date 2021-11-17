@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'search' => 'seisekis#search'
   get 'home/top'
 
-  get '/signup', to: 'user#new'
+  get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザ:</strong>
   <%= @situmon.user_id %>
 </p>
 
 <p> 
-  <strong>Naiyou:</strong>
+  <strong>内容:</strong>
   <%= @situmon.naiyou %>
 </p>
 
 
 <p>
-  <strong>Kategori:</strong>
+  <strong>就職・進学:</strong>
   <% if @situmon.kategori == 1 %>
     就職
   <% else %>
@@ -23,7 +24,7 @@
 
 
 <p>
-  <strong>Kategori2:</strong>
+  <strong>企業/学校・勉強方法:</strong>
   <% if @situmon.kategori2 == 3 %>
     勉強方法
   <% else %>
@@ -32,7 +33,7 @@
 </p>
 
 <p>
-  <strong>Nitiji:</strong>
+  <strong>日付:</strong>
   <%= @situmon.nitiji %>
 </p>
 
@@ -46,13 +47,17 @@
 <% end %>  
 
 <% @situmon.kaitous.each do |h| %>
-  <p>
-  <%= h.created_at %>
-  <br>
-  <%= h.hentou %>
-  </p>
+    <p>
+    <%= h.created_at %>
+    <br>
+      <td><%= h.hentou %></td>
+    </p>
+    <td><% if teacher? %></td>
+    <td><%= link_to '削除', h, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% else %>
+    <td></td>
+    <td></td>
+    <% end %>
 <% end %>
-
-
-<%= link_to 'Edit', edit_situmon_path(@situmon) %> |
-<%= link_to 'Back', new_situmon_path %>
+<br>
+<%= link_to '戻る', new_situmon_path %>

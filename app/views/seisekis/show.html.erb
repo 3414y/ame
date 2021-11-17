@@ -1,39 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>ユーザー:</strong>
-  <%= @seiseki.user_id %>
-</p>
+<h1>1年</h1>
+<table border = 1>
+<tr>
+<td align="center" width="55">学期</td>
+  <% @seisekis_1.each do |seiseki| %>
+      <% seiseki.tensus.each do |tensu| %>
+      <th align="center" width="80"><%= tensu.kyouka.namae %></th>
+      <% end %>
+      <% break %>
+  <% end %>
+</tr>
+    <% @seisekis_1.each do |seiseki| %>
+      <tr>
+        <td align="center"><%= seiseki.gakki %>学期</td>
+        <% seiseki.tensus.each do |tensu| %>
+        <td align="right"><%= tensu.tokuten %><hr><%= tensu.hyoutei %></td>
+        <% end %>
+      </tr>
+    <% end %>
+</table>
 
-<p>
-  <strong>学年:</strong>
-  <%= @seiseki.gakunen %>
-</p>
+<h1>2年</h1>
+<table border = 1 >
+<tr>
+<td align="center" width="185">学期</td>
+  <% @seisekis_2.each do |seiseki| %>
+      <% seiseki.tensus.each do |tensu| %>
+      <th align="center" width="200" ><%= tensu.kyouka.namae %></th>
+      <% end %>
+      <% break %>
+  <% end %>
+</tr>
+    <% @seisekis_2.each do |seiseki| %>
+      <tr>
+        <td align="center"><%= seiseki.gakki %>学期</td>
+        <% seiseki.tensus.each do |tensu| %>
+        <td align="right"><%= tensu.tokuten %><hr><%= tensu.hyoutei %></td>
+        <% end %>
+      </tr>
+    <% end %>
+</table>
 
-<p>
-  <strong>学期:</strong>
-  <%= @seiseki.gakki %>
-</p>
-
-<p>
-  <strong>教科:</strong>
-  <%= @seiseki.kyouka_id %>
-</p>
-
-<p>
-  <strong>得点:</strong>
-  <%= @seiseki.tokuten %>
-</p>
-
-<p>
-  <strong>並び:</strong>
-  <%= @seiseki.narabi %>
-</p>
-
-<p>
-  <strong>評定:</strong>
-  <%= @seiseki.hyoutei %>
-</p>
-
-<%= link_to '編集', edit_seiseki_path(@seiseki) %> |
-<%= link_to '戻る', seisekis_path %>
+<h1>3年</h1>
+<table border = 1>
+<tr>
+<td align="center" width="150">学期</td>
+  <% @seisekis_3.each do |seiseki| %>
+      <% seiseki.tensus.each do |tensu| %>
+      <th width="200"><%= tensu.kyouka.namae %></th>
+      <% end %>
+      <% break %>
+  <% end %>
+</tr>
+    <% @seisekis_3.each do |seiseki| %>
+      <tr>
+        <td align="center"><%= seiseki.gakki %>学期</td>
+        <% seiseki.tensus.each do |tensu| %>
+        <td align="right"><%= tensu.tokuten %><hr><%= tensu.hyoutei %></td>
+        <% end %>
+      </tr>
+    <% end %>
+</table>
+<br>
+<a href = 'http://localhost:3000'> 戻る</a>

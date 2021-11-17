@@ -28,7 +28,7 @@ class KaitousController < ApplicationController
     if @kaitou.save
       redirect_to situmon_path(@kaitou.situmon_id)
     else
-      render :new  
+      redirect_to situmon_path(@kaitou.situmon_id), alert: "返答を入力してください" 
     end
   end
 
@@ -36,7 +36,7 @@ class KaitousController < ApplicationController
   def destroy
     @kaitou.destroy
     respond_to do |format|
-      format.html { redirect_to kaitous_url, notice: "Kaitou was successfully destroyed." }
+      format.html { redirect_to new_situmon_url, notice: "Kaitou was successfully destroyed." }
       format.json { head :no_content }
     end
   end

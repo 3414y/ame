@@ -15,6 +15,7 @@ class SitumonsController < ApplicationController
     @situmon = Situmon.new 
     @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
     @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
+    @situmon.user_id = current_user.id
   end
 
   # GET /situmons/1/edit
@@ -40,7 +41,8 @@ class SitumonsController < ApplicationController
   # POST /situmons or /situmons.json
   def create
     @situmon = Situmon.new(situmon_params)
-
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
     respond_to do |format|
       if @situmon.save
         format.html { redirect_to @situmon, notice: "Situmon was successfully created." }
@@ -51,9 +53,12 @@ class SitumonsController < ApplicationController
       end
     end
   end
-
+ 
+      
   # PATCH/PUT /situmons/1 or /situmons/1.json
   def update
+    @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
+    @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
     respond_to do |format|
       if @situmon.update(situmon_params)
         format.html { redirect_to @situmon, notice: "Situmon was successfully updated." }
@@ -69,7 +74,7 @@ class SitumonsController < ApplicationController
   def destroy
     @situmon.destroy
     respond_to do |format|
-      format.html { redirect_to situmons_url, notice: "Situmon was successfully destroyed." }
+      format.html { redirect_to new_situmon_url, notice: "Situmon was successfully destroyed." }
       format.json { head :no_content }
     end
   end
