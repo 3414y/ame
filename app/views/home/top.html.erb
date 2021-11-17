@@ -1,5 +1,5 @@
 <h1> AME </h1>
-<h4 class='keisen'> <%= link_to 'アイコン',edit_user_path(current_user.id) %></h4>
+<h4 class='aikon'> <%= link_to image_tag("aikon.png"),edit_user_path(current_user.id) %></h4>
 <tbody>
  <h2 class="keisen"><%= link_to ' 成績一覧  ', teacher? ? seisekis_path : seiseki_path(@seiseki.id) %></h2>
     <tr>
