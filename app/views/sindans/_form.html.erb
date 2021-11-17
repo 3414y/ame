@@ -1,0 +1,37 @@
+<%= form_with(model: sindan) do |form| %>
+  <% if sindan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sindan.errors.count, "error") %> prohibited this sindan from being saved:</h2>
+
+      <ul>
+        <% sindan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sinrosaki %>
+    <%= form.text_field :sinrosaki %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kennai %>
+    <%= form.text_field :kennai %>
+  </div>
+
+  <div class="field">
+    <%= form.label :syokusyu %>
+    <%= form.text_field :syokusyu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hyoutei %>
+    <%= form.text_field :hyoutei %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

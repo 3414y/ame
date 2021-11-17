@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>進路診断</h1>
+
+  <thead>
+    <tr>
+      <th>進路先</th>
+      <th>県内</th>
+      <th>職種</th>
+      <th>評定</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sindans.each do |sindan| %>
+      <tr>
+        <td><%= sindan.sinrosaki %></td>
+        <td><%= sindan.kennai %></td>
+        <td><%= sindan.syokusyu %></td>
+        <td><%= sindan.hyoutei %></td>
+        <td><%= link_to 'Show', sindan %></td>
+        <td><%= link_to 'Edit', edit_sindan_path(sindan) %></td>
+        <td><%= link_to 'Destroy', sindan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '進路診断', new_sindan_path %>
