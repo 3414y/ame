@@ -15,6 +15,7 @@ class SitumonsController < ApplicationController
     @situmon = Situmon.new 
     @situmon_singaku = Situmon.where(kategori:2).order(nitiji: :desc).first(5)
     @situmon_syuusyoku = Situmon.where(kategori:1).order(nitiji: :desc).first(5)
+    @situmon.user_id = current_user.id
   end
 
   # GET /situmons/1/edit

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @situmons = Situmon.where("user_id = ? ",current_user.id)
   end
 
   # POST /users or /users.json
