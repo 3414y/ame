@@ -3,10 +3,10 @@
 <h1>1年</h1>
 <table border = 1>
 <tr>
-<td align="center">学期</td>
+<td align="center" width="55">学期</td>
   <% @seisekis_1.each do |seiseki| %>
       <% seiseki.tensus.each do |tensu| %>
-      <td align="center"><%= tensu.kyouka.namae %></td>
+      <th align="center" width="80"><%= tensu.kyouka.namae %></th>
       <% end %>
       <% break %>
   <% end %>
@@ -22,12 +22,12 @@
 </table>
 
 <h1>2年</h1>
-<table border = 1>
+<table border = 1 >
 <tr>
-<td align="center">学期</td>
+<td align="center" width="185">学期</td>
   <% @seisekis_2.each do |seiseki| %>
       <% seiseki.tensus.each do |tensu| %>
-      <td align="center"><%= tensu.kyouka.namae %></td>
+      <th align="center" width="200" ><%= tensu.kyouka.namae %></th>
       <% end %>
       <% break %>
   <% end %>
@@ -45,10 +45,10 @@
 <h1>3年</h1>
 <table border = 1>
 <tr>
-<td align="center">学期</td>
+<td align="center" width="150">学期</td>
   <% @seisekis_3.each do |seiseki| %>
       <% seiseki.tensus.each do |tensu| %>
-      <td align="center"><%= tensu.kyouka.namae %></td>
+      <th width="200"><%= tensu.kyouka.namae %></th>
       <% end %>
       <% break %>
   <% end %>
