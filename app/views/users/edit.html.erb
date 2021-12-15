@@ -6,20 +6,28 @@
 <a href = 'http://localhost:3000'> 戻る</a>
 <h1>送信した質問への返答</h1>
 <table>
-    <tr>
-      <th>ユーザ</th>
-      <th>内容</th>
-      <th>返答の数</th>
-      <th></th>
-    </tr>
-    <tbody>
+  <tr>
+    <th>ユーザ</th>
+    <th>内容</th>
+    <th>返答の数</th>
+    <th></th>
+  </tr>
+  <tbody>
     <% @situmons.each do |s| %>
-        <tr> 
-        <td><%= s.user_id %></td>
-        <td><%= s.naiyou %></td>
-        <td><%= s.kaitous.length %></td>
-        <td><%= link_to '返答へ', s %></td>
-        </tr>
-    </tbody>
+      <tr> 
+      <td><%= s.user_id %></td>
+      <td><%= s.naiyou %></td>
+
+      <% midoku = 0 %>
+      <% s.kaitous.each do |k| %>
+        <% if k.kidoku == 0 %>
+          <% midoku = midoku + 1 %>
+        <% end %>
+      <% end %>
+      
+      <td><%= midoku %></td>
+      <td><%= link_to '返答へ', situmon_path(s.id, name: 1) %></td>
+      </tr>
     <% end %>
-</table>    
+  </tbody>
+</table>
