@@ -1,63 +1,69 @@
 <h1>進路診断</h1>
+<%= link_to 'ホーム画面', home_top_path %>
 
 <h2>進路先</h2>
 
 <%= form_with url: new_sindan_path, local: true, method: :get do |form| %>
-    <%= form.text_field :keyword, placeholder: "企業・学校名" %>
+    <%= form.text_field :kigyoumei, placeholder: "企業名を入力" %>
+    <%= form.select :syokusyumei, Syokusyu.all.map { |b| [b.syokusyumei, b.id] },include_blank: "職種を選択" %>
+    <%= form.select :kennai, options_for_select(Kigyou.kennnai_values),include_blank: "県内・県外"  %>
+    <%= form.text_field :gakkoumei, placeholder: "学校名を入力" %>
+    <%= form.select :gakkamei, Gakka.all.map { |b| [b.gakkamei, b.id] },include_blank: "学科を選択"  %>
+    <%= form.select :kennai, options_for_select(Syuusyoku.kennai_values),include_blank: "県内・県外" %>
+    <%= form.hidden_field :search, value: true %>
     <%= form.submit "検索" %>
 <% end %>
 
 <h1>診断結果</h1>
-<% @kigyous.each do |kigyou| %>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>企業名</th>
-        <th>職種名</th>
-        <th>県内</th>
-        <th>企業HP</th>
-        <th>評定</th>
-      </tr>
-    </thead>
- 
-    <tbody>
-      <% @kigyous.each do |kigyou| %>
-        <tr>
-          <td><%= kigyou.kigyoumei %></td>
-          <td><%= kigyou.syokusyu.syokusyumei %></td>
-          <td><%= kigyou.kennnai %></td>
-          <td><%= kigyou.khp %></td>
-          <td><%= kigyou.hyoutei %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
 
-<% @syuusyokus.each do |syuusyoku| %>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>学校名</th>
-          <th>学科名</th>
-          <th>県内</th>
-          <th>学校HP</th>
-          <th>評定</th>
-        </tr>
-      </thead>
-  
-      <tbody>
-        <% @syuusyokus.each do |syuusyoku| %>
-          <tr>
-            <td><%= syuusyoku.gakkoumei %></td>
-            <td><%= syuusyoku.gakka.gakkamei %></td>
-            <td><%= syuusyoku.kennai %></td>
-            <td><%= syuusyoku.shp %></td>
-            <td><%= syuusyoku.hyoutei %></td>
+<table>
+  <tr>
+   <td valign=top>
+      <table border="1">
+       <thead>
+         <tr>
+           <th>企業名</th>
+           <th>職種名</th>
+           <th>県内</th>
+           <th>企業HP</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-<% end %>
+       </thead>
+  
+        <tbody>
+         <% @kigyous.each do |kigyou| %>
+           <tr>
+             <td><%= kigyou.kigyoumei %></td>
+             <td><%= kigyou.syokusyu.syokusyumei %></td>
+             <td><%= kigyou.kennnai %></td>
+             <td><%= kigyou.khp %></td>
+           </tr>
+         <% end %>
+        </tbody>
+     </table>
+   </td>
+   
+   <td valign=top>
+     <table border="1">
+         <thead>
+            <tr>
+              <th>学校名</th>
+              <th>学科名</th>
+              <th>県内</th>
+              <th>学校HP</th>
+            </tr>
+         </thead>
 
-<%= link_to '戻る', sindans_path %>
+        <tbody>
+         <% @syuusyokus.each do |syuusyoku| %>
+           <tr>
+             <td><%= syuusyoku.gakkoumei %></td>
+             <td><%= syuusyoku.gakka.gakkamei %></td>
+             <td><%= syuusyoku.kennai %></td>
+             <td><%= syuusyoku.shp %></td>
+           </tr>
+         <% end %>
+        </tbody>
+     </table>
+   </td>
+  </tr>
+</table>
