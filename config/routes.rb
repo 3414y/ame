@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'search' => 'seisekis#search'
   get 'home/top'
+  
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
@@ -34,9 +35,6 @@ Rails.application.routes.draw do
   get 'situmon_search3', to: 'situmons#search3'
   get 'situmon_search4', to: 'situmons#search4'
 
-  #get 'home/top', to: 'kigyous'
-  #get 'home/top', to: 'seisekis'
-  #get 'home/top', to: 'situmon'
 end
 
 

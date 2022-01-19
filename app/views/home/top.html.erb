@@ -1,14 +1,11 @@
 <h1> AME </h1>
 <div class='keisen'>
  <h4 class='aikon'> <%= link_to image_tag("aikon.png"),edit_user_path(current_user.id) %></h4>
- <div class= keisen_hentocount > <%= @hentocount %> </div>
+ <div class= keisen_hentocount > <%= @hentocount if @hentocount >= 1 %> </div>
 </div>
-<tbody>
- <h2 class="keisen2"><%= link_to ' 成績一覧  ', teacher? ? seisekis_path : seiseki_path(@seiseki.id) %></h2>
-    <tr>
-      <td> <h3 class="keisen2"> <a href = 'http://localhost:3000/senntakus/top/'> 就職/進学一覧</a></h3> </td>
-    <td> <h2 class="keisen3">  <%= link_to '  質問', new_situmon_path %> </h2>  </td>
-</tr> 
-</tbody>   
- 
+<div>
+ <h3 class="keisen2"><%= link_to ' 成績一覧  ', teacher? ? seisekis_path : seiseki_path(@seiseki.id) %></h3>
+  <h3 class="keisen2"> <a href = 'http://localhost:3000/senntakus/top/'> 就職/進学一覧</a></h3> 
+  <h3 class="keisen2">  <%= link_to '  質問', new_situmon_path %> </h3> 
+</div>
 

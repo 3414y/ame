@@ -8,6 +8,15 @@ class SitumonsController < ApplicationController
 
   # GET /situmons/1 or /situmons/1.json
   def show
+    if params[:name].present?
+    @situmon.kaitous.each do |k|
+      if k.kidoku == 0
+        @kaitou = Kaitou.find(k.id)
+        @kaitou.kidoku = 1
+        @kaitou.save
+      end
+    end  
+    end
   end
 
   # GET /situmons/new

@@ -17,10 +17,12 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
+  
   def edit
     @situmons = Situmon.where("user_id = ? ",current_user.id)
   end
 
+  
   # POST /users or /users.json
   def create
     @user = User.new(user_params)

@@ -62,5 +62,18 @@
       </tr>
     <% end %>
 </table>
+
+<h1>評定平均</h1>
+<table border = 1>
+  <td align="center" width="60">1年</td>
+  <td align="right"><%= Seiseki.hyouteiheikin(@seisekis_1) %></td>
+  <tr></tr>
+  <td align="center" width="60">2年</td>
+  <td align="right"><%= Seiseki.hyouteiheikin(@seisekis_2) %></td>
+  <tr></tr>
+  <td align="center" width="60">3年</td>
+  <td align="right"><%= Seiseki.hyouteiheikin(@seisekis_3) %></td>
+</table>
 <br>
-<a href = 'http://localhost:3000'> 戻る</a>
+<a href = 'http://localhost:3000/seisekis'> 戻る</a>
+<a href = 'http://localhost:3000'> トップページに戻る</a>
