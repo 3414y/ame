@@ -75,5 +75,10 @@
   <td align="right"><%= Seiseki.hyouteiheikin(@seisekis_3) %></td>
 </table>
 <br>
-<a href = 'http://localhost:3000/seisekis'> 戻る</a>
+<% if teacher? %>
+ <a href = 'http://localhost:3000/seisekis'> 戻る</a>
+ <% else %>
+ <td></td>
+ <td></td>
+<% end %>
 <a href = 'http://localhost:3000'> トップページに戻る</a>

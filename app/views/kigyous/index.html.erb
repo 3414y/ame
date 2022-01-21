@@ -11,7 +11,6 @@
       <th>職種名</th>
       <th>県内</th>
       <th>企業HP</th>
-      <th>評定</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +22,6 @@
         <td><%= kigyou.syokusyu.syokusyumei %></td>
         <td><%= kigyou.kennnai %></td>
         <td><%= kigyou.khp %></td>
-        <td><%= kigyou.hyoutei %></td>
         <td><%= link_to '詳細', kigyou %></td>
         <td><%= link_to '更新', edit_kigyou_path(kigyou) %></td>
         <td><%= link_to '削除', kigyou, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>

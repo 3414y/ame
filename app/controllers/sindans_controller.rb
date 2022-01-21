@@ -15,9 +15,9 @@ class SindansController < ApplicationController
     #@sindan = Sindan.new
     #@sindans = Sindan.includes(:kigyous).references(:kigyous).search(params[:keyword])
 
-    if params[:keyword].present?
-    @kigyous = Kigyou.search(params[:keyword])
-    @syuusyokus = Syuusyoku.search(params[:keyword])
+    if params[:search].present?
+    @kigyous = Kigyou.search_kigyoumei(params[:kigyoumei]).search_syokusyu(params[:syokusyumei]).search_kennnai(params[:kennai])
+    @syuusyokus = Syuusyoku.search_gakkoumei(params[:gakkoumei]).search_gakka(params[:gakkamei]).search_kennai(params[:kennai])
     else
       @kigyous = []
       @syuusyokus = []
