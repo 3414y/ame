@@ -88,3 +88,25 @@ CSV.foreach("db/gakkas.csv",headers: true) do |row|
         gakkamei: row["gakkamei"]
     )
 end
+
+Kigyou.delete_all
+reset_pk_sequence("kigyous")
+CSV.foreach("db/kigyous.csv",headers: true) do |row|
+    Kigyou.create(
+        kigyoumei: row["kigyoumei"],
+        syokusyu_id: row["syokusyu_id"],
+        kennnai: row["kennnai"],
+        khp: row["khp"]
+    )
+end
+
+Syuusyoku.delete_all
+reset_pk_sequence("syuusyokus")
+CSV.foreach("db/syuusyokus.csv",headers: true) do |row|
+    Syuusyoku.create(
+        gakkoumei: row["gakkoumei"],
+        gakka_id: row["gakka_id"],
+        kennai: row["kennai"],
+        shp: row["shp"]
+    )
+end
