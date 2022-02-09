@@ -1,7 +1,7 @@
 <h1>進路診断</h1>
 <%= link_to 'ホーム画面', home_top_path %>
 
-<h2>進路先</h2>
+<h2>条件入力</h2>
 
 <%= form_with url: new_sindan_path, local: true, method: :get do |form| %>
     <%= form.text_field :kigyoumei, placeholder: "企業名を入力" %>

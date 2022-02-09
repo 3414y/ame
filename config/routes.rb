@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'senntakus/top'
   resources :tensus
+  root 'sessions#new'
   get 'sessions/new'
   get 'search' => 'seisekis#search'
   get 'home/top'
